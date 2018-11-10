@@ -1,5 +1,5 @@
 # twitch-proxy
-Controll your secondary Twitch accounts through Twitch's whispers
+Control your secondary Twitch accounts through Twitch's whispers
 
 ## ENV
 Required envs:
