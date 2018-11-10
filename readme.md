@@ -35,7 +35,7 @@ npm test
 
 ## Commands
 
-### help
+### `help`
 Show help
 
 ### `message <channel> <text>`
