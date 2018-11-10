@@ -38,12 +38,15 @@ npm test
 ### help
 Show help
 
-### follow <usernames...>
-Usage: `/w botusername follow b0aty forsen`
-
-### unfollow <usernames...>
-Usage: `/w botusername unfollow b0aty forsen`
-
-### message <channel> <text>
+### `message <channel> <text>`
 Usage: `/w botusername message b0aty Hi!`
 Aliases: m, msg
+
+### `follow <usernames...>`
+Usage: `/w botusername follow b0aty forsen`
+
+### `unfollow <usernames...>`
+Usage: `/w botusername unfollow b0aty forsen`
+
+### `followage <user> <channel>`
+Usage: `/w botusername followage forsen b0aty`
