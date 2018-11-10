@@ -1,0 +1,19 @@
+{
+  "extends": "airbnb-base",
+  "env": {
+    "jest": true
+  },
+  "rules": {
+    "no-console": "off",
+    "import/order": "off",
+    "space-before-function-paren": ["error", "always"],
+    "no-restricted-syntax": "off",
+    "no-continue": "off",
+    "no-param-reassign": "off",
+    "quotes": ["error", "double"],
+    "no-await-in-loop": "off",
+    "no-underscore-dangle": ["error", {
+      "allow": ["_id"]
+    }]
+  }
+}

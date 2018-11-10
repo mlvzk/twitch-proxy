@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`parseMessage Ping 1`] = `
+Object {
+  "channel": "tmi.twitch.tv",
+  "command": "PING",
+  "message": undefined,
+  "params": Array [
+    "tmi.twitch.tv",
+  ],
+  "prefix": null,
+  "raw": "PING :tmi.twitch.tv",
+  "tags": Object {},
+  "username": null,
+}
+`;
+
+exports[`parseMessage Whisper 1`] = `
+Object {
+  "channel": "user",
+  "command": "WHISPER",
+  "message": "test",
+  "params": Array [
+    "user",
+    "test",
+  ],
+  "prefix": "user!user@user.tmi.twitch.tv",
+  "raw": "@badges=;color=#8A2BE2;display-name=user;emotes=;message-id=947;thread-id=123456_54645;turbo=0;user-id=123456;user-type= :user!user@user.tmi.twitch.tv WHISPER user :test",
+  "tags": Object {
+    "badges": true,
+    "color": "#8A2BE2",
+    "display-name": "user",
+    "emotes": true,
+    "message-id": "947",
+    "thread-id": "123456_54645",
+    "turbo": "0",
+    "user-id": "123456",
+    "user-type": true,
+  },
+  "username": "user",
+}
+`;

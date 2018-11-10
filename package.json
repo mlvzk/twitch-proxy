@@ -1,0 +1,29 @@
+{
+  "name": "twitch-proxy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bin/index.js",
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint .",
+    "start": "node bin/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "GPLv3",
+  "dependencies": {
+    "dotenv": "^6.1.0",
+    "got": "^9.3.1",
+    "irc-message": "^3.0.2",
+    "ws": "^6.1.0",
+    "yargs": "^12.0.2"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^5.8.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "jest": "^23.6.0",
+    "sinon": "^7.1.1"
+  }
+}
