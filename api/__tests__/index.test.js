@@ -103,4 +103,28 @@ describe("TwitchApi", () => {
       headers: sinon.match.object,
     });
   });
+
+  it("fetchUserFollowByChannel", async () => {
+    const userID = 0;
+    const channelID = 1;
+
+    const followData = {
+      created_at: (new Date()).toJSON(),
+      channel: { _id: channelID },
+      notifications: true,
+    };
+
+    gotGet.resolves({
+      body: followData,
+    });
+
+    const result = await twitchApi.fetchUserFollowByChannel(userID, channelID);
+
+    sinon.assert.calledWith(gotGet, `${twitchApi.baseURL}/users/${userID}/follows/channels/${channelID}`, {
+      headers: sinon.match.object,
+      json: true,
+    });
+
+    chai.assert.deepEqual(result, followData);
+  });
 });

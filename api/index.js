@@ -19,7 +19,7 @@ const got = require("got");
 
 module.exports = class TwitchApi {
   constructor (clientID, token) {
-    this.baseURL = "https://api.twitch.tv/kraken";
+    this.baseURL = "https://api.twitch.tv/v5";
     this.defaultHeaders = {
       "client-id": clientID,
       authorization: `OAuth ${token}`,
@@ -57,5 +57,14 @@ module.exports = class TwitchApi {
     await got.delete(`${this.baseURL}/users/${this.userInfo._id}/follows/channels/${targetChannel}`, {
       headers: this.defaultHeaders,
     });
+  }
+
+  async fetchUserFollowByChannel (userID, targetChannelID) {
+    const { body } = await got.get(`${this.baseURL}/users/${userID}/follows/channels/${targetChannelID}`, {
+      headers: this.defaultHeaders,
+      json: true,
+    });
+
+    return body;
   }
 };
