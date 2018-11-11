@@ -48,6 +48,7 @@ describe("Followage Command", () => {
 
     await handler(argv);
 
+    sinon.assert.calledWith(argv.twitchApi.fetchUsers, [user.name, channel.name]);
     sinon.assert.calledWith(argv.twitchApi.fetchUserFollowByChannel, user._id, channel._id);
     sinon.assert.calledWith(argv.reply, sinon.match.string);
   });

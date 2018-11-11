@@ -127,4 +127,21 @@ describe("TwitchApi", () => {
 
     chai.assert.deepEqual(result, followData);
   });
+
+  it("fetchAllUserFollows", async () => {
+    const userID = 1;
+
+    gotGet.resolves({
+      body: {
+        _total: 0,
+        follows: [],
+      },
+    });
+
+    const result = await twitchApi.fetchAllUserFollows(userID);
+
+    sinon.assert.calledWith(gotGet, `${twitchApi.baseURL}/users/${userID}/follows/channels?limit=100&offset=0`);
+
+    chai.assert.deepEqual(result, []);
+  });
 });

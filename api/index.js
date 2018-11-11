@@ -67,4 +67,19 @@ module.exports = class TwitchApi {
 
     return body;
   }
+
+  async fetchAllUserFollows (userID, offset = 0, accumulator = []) {
+    const { body } = await got.get(`${this.baseURL}/users/${userID}/follows/channels?limit=100&offset=${offset}`, {
+      headers: this.defaultHeaders,
+      json: true,
+    });
+
+    accumulator = accumulator.concat(body.follows);
+
+    if (offset < body._total) {
+      return await this.fetchAllUserFollows(userID, offset + 100, accumulator);
+    }
+
+    return accumulator;
+  }
 };

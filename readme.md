@@ -49,4 +49,9 @@ Usage: `/w botusername follow b0aty forsen`
 Usage: `/w botusername unfollow b0aty forsen`
 
 ### `followage <user> <channel>`
+Description: Returns follow duration of the user on the target channel
 Usage: `/w botusername followage forsen b0aty`
+
+### `language <user>`
+Description: Sorts and returns broadcast languages of streamers the user follows
+Usage: `/w botusername language b0aty`
