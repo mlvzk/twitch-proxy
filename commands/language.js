@@ -15,8 +15,6 @@
 // You should have received a copy of the GNU General Public License
 // along with twitch-proxy.  If not, see <http://www.gnu.org/licenses/>.
 
-const logger = require("../utils/logger");
-const prettyMs = require("pretty-ms");
 const _ = require("lodash");
 const { getName: getNameByCode } = require("iso-639-1");
 
@@ -32,7 +30,7 @@ module.exports.handler = async function languageHandler (argv) {
   const [user] = await argv.twitchApi.fetchUsers([argv.user]);
 
   if (!user) {
-    argv.reply(`User not found`);
+    argv.reply("User not found");
     return;
   }
 
@@ -41,5 +39,5 @@ module.exports.handler = async function languageHandler (argv) {
   const languages = follows.map(follow => follow.channel.broadcaster_language).map(code => getNameByCode(code) || "Other");
   const occurrs = _.fromPairs(_.sortBy(_.toPairs(_.countBy(languages)), 1).reverse());
 
-  argv.reply(`Languages of streamers followed by ${argv.user} are ${Object.entries(occurrs).map(([language, times]) => language + ": " + times).join(", ")}`);
+  argv.reply(`Languages of streamers followed by ${argv.user} are ${Object.entries(occurrs).map(([language, times]) => `${language}: ${times}`).join(", ")}`);
 };

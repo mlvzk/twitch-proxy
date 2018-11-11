@@ -13,7 +13,10 @@
     "quotes": ["error", "double"],
     "no-await-in-loop": "off",
     "no-underscore-dangle": ["error", {
-      "allow": ["_id"]
+      "allow": ["_id", "_total"]
+    }],
+    "no-trailing-spaces": ["error", {
+      "ignoreComments": true
     }]
   }
 }

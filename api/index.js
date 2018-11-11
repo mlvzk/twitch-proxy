@@ -77,7 +77,7 @@ module.exports = class TwitchApi {
     accumulator = accumulator.concat(body.follows);
 
     if (offset < body._total) {
-      return await this.fetchAllUserFollows(userID, offset + 100, accumulator);
+      return this.fetchAllUserFollows(userID, offset + 100, accumulator);
     }
 
     return accumulator;
